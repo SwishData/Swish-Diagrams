@@ -12,3 +12,5 @@ sequenceDiagram
     Client->>Server: ACK
 ```
 
+##HTTPS Handshake
+
