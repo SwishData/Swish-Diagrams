@@ -11,6 +11,7 @@ sequenceDiagram
     Client->>Server: SYN
     Server-->>Client: SYN+ACK
     Client->>Server: ACK
+'''
 
 ##HTTPS Handshake
 
@@ -26,6 +27,7 @@ sequenceDiagram
     Client->>Server: Client Key Exchange, Change Cipher Spec, Finished
     Server-->>Client: Change Cipher Spec, Finished
     Note over Client,Server: Data Exchange
+'''
 
 In this diagram, the client initiates the HTTPS connection by sending a Client Hello message to the server, indicating the TLS version and preferred cryptographic algorithms. The server responds with a Server Hello message, sending its certificate, server key exchange message, and server hello done message.
 
@@ -37,6 +39,7 @@ You can use the Mermaid syntax to create an HTTPS handshake diagram to track the
 
 ##TCP Proxy
 
+'''mermaid
 sequenceDiagram
     participant Client
     participant Proxy
@@ -53,6 +56,7 @@ sequenceDiagram
     OriginServer-->>Proxy: HTTP Response
     Proxy-->>Client: HTTP Response
     Client->>Proxy: ACK
+'''
 
 In this diagram, a client initiates a TCP connection with the proxy (like Cloudflare) by sending a SYN packet. The proxy responds with a SYN+ACK packet, indicating it received the request. The client then acknowledges the proxy's response with an ACK packet.
 
