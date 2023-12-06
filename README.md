@@ -3,7 +3,7 @@ Repo for common diagrams we use in Engineering discussions with clients.  Most a
 
 ## TCP Three Way Handshake Diagram
 
-'''mermaid
+```mermaid
 sequenceDiagram
     participant Client
     participant Server
@@ -11,7 +11,7 @@ sequenceDiagram
     Client->>Server: SYN
     Server-->>Client: SYN+ACK
     Client->>Server: ACK
-'''
+```
 
 In this diagram, the client initiates the TCP connection by sending a SYN packet to the server. 
 The server responds with a SYN+ACK packet, indicating its willingness to establish a connection. 
@@ -19,7 +19,7 @@ Finally, the client sends an ACK packet to acknowledge the server's response, co
 
 ## HTTPS Diagram
 
-'''mermaid
+```mermaid
     sequenceDiagram
     participant Client
     participant Server
@@ -31,7 +31,7 @@ Finally, the client sends an ACK packet to acknowledge the server's response, co
     Client->>Server: Client Key Exchange, Change Cipher Spec, Finished
     Server-->>Client: Change Cipher Spec, Finished
     Note over Client,Server: Data Exchange
-'''
+```
 
 In this diagram, the client initiates the HTTPS connection by sending a Client Hello message to the server, indicating the TLS version and preferred cryptographic algorithms. The server responds with a Server Hello message, sending its certificate, server key exchange message, and server hello done message. 
 The client then conducts certificate verification to ensure that the server is authentic. The client generates a random cryptographic key, encrypts it using the server’s public key, and sends it to the server in the Client Key Exchange message along with a Change Cipher Spec message indicating that for all future messages, encryption will used. 
@@ -40,7 +40,7 @@ You can use the Mermaid syntax to create an HTTPS handshake diagram to track the
 
 ## TCP Proxy Diagram
 
-'''mermaid
+```mermaid
 sequenceDiagram
     participant Client
     participant Proxy
@@ -57,7 +57,7 @@ sequenceDiagram
     OriginServer-->>Proxy: HTTP Response
     Proxy-->>Client: HTTP Response
     Client->>Proxy: ACK
-'''
+```
 
 In this diagram, a client initiates a TCP connection with the proxy (like Cloudflare) by sending a SYN packet. The proxy responds with a SYN+ACK packet, indicating it received the request. The client then acknowledges the proxy's response with an ACK packet. 
 
