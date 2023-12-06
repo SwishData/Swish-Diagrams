@@ -1,29 +1,7 @@
 # Swish-Diagrams
 Repo for common diagrams we use in Engineering discussions with clients.  Most are created with draw.io or with plantuml in VSCode or another IDE.  Feel free to create your own or submit a request to suggest a new diagram.
 
-```mermaid
-sequenceDiagram
-    participant Client
-    participant Server
-
-    Client->>Server: Client Hello
-    Server-->>Client: Server Hello
-    Server-->>Client: Certificate, Server Key Exchange, Server Hello Done
-    Client->>Server: Certificate Verification
-    Client->>Server: Client Key Exchange, Change Cipher Spec, Finished
-    Server-->>Client: Change Cipher Spec, Finished
-    Note over Client,Server: Data Exchange
-'''
-
-In this diagram, the client initiates the HTTPS connection by sending a Client Hello message to the server, indicating the TLS version and preferred cryptographic algorithms. The server responds with a Server Hello message, sending its certificate, server key exchange message, and server hello done message.
-
-The client then conducts certificate verification to ensure that the server is authentic. The client generates a random cryptographic key, encrypts it using the server’s public key, and sends it to the server in the Client Key Exchange message along with a Change Cipher Spec message indicating that for all future messages, encryption will used.
-
-The server responds by also sending a Change Cipher Spec message and encrypted Finished message. If this is correct, the client responds with its own Change Cipher Spec and encrypted Finished message. Once the handshake is completed, both client and server can now exchange data securely.
-
-You can use the Mermaid syntax to create an HTTPS handshake diagram to track the messages sent between the client and server when establishing a secure connection.
-
-##TCP Proxy
+##TCP Proxy Diagram
 
 '''mermaid
 sequenceDiagram
