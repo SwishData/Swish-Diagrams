@@ -2,5 +2,5 @@
 
 '''mermaid
 sequenceDiagram
-Visitor->>Origin Server
+Visitor->>Origin Server:Connection
 '''
