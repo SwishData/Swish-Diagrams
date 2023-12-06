@@ -1,6 +1,6 @@
 ## Basic Connection
 
 ```mermaid
-flowchart LR
-    Visitor-->Origin Server
+    flowchart LR
+        Visitor-->Origin Server
 ```
