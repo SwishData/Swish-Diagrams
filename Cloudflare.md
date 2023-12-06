@@ -1,6 +1,6 @@
 ## Basic Connection
 
-'''mermaid
+```mermaid
 sequenceDiagram
 Visitor->>Origin Server:Connection
-'''
+```
