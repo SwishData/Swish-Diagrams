@@ -1,6 +1,5 @@
 #Useful Daigrams for IT Teams
 
-
 ##TCP Three Way Handshake
 
 ```mermaid
