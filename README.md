@@ -7,7 +7,6 @@ Repo for common diagrams we use in Engineering discussions with clients.  Most a
 sequenceDiagram
     participant Client
     participant Server
-
     Client->>Server: SYN
     Server-->>Client: SYN+ACK
     Client->>Server: ACK
@@ -23,7 +22,6 @@ Finally, the client sends an ACK packet to acknowledge the server's response, co
     sequenceDiagram
     participant Client
     participant Server
-
     Client->>Server: Client Hello
     Server-->>Client: Server Hello
     Server-->>Client: Certificate, Server Key Exchange, Server Hello Done
@@ -45,7 +43,6 @@ sequenceDiagram
     participant Client
     participant Proxy
     participant OriginServer
-
     Client->>Proxy: SYN
     Proxy-->>Client: SYN+ACK
     Client->>Proxy: ACK
