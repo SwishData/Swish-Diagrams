@@ -2,5 +2,5 @@
 
 ```mermaid
     flowchart LR
-        Visitor<- Connection ->OriginServer
+        Visitor<-- Connection -->OriginServer
 ```
