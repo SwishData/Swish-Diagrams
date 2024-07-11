@@ -97,3 +97,24 @@ The user provides the SAML assertion to the service provider.
 The service provider validates the SAML assertion to make sure it comes from an authentic identity provider.
 The identity provider confirms the user's authentication to the service provider.
 The service provider grants the user access to the protected resource.
+
+## BPMN Test
+```mermaid
+@start bpmn
+    participant Client
+    participant PizzaRestaurant
+
+    Client->PizzaRestaurant: Place pizza order
+    PizzaRestaurant->PizzaRestaurant: Receive order
+    PizzaRestaurant->PizzaRestaurant: Prepare pizza
+    PizzaRestaurant->PizzaRestaurant: Bake pizza
+    PizzaRestaurant->PizzaRestaurant: Package pizza
+    PizzaRestaurant->PizzaRestaurant: Assign delivery driver
+    PizzaRestaurant->PizzaRestaurant: Deliver pizza
+    Client->PizzaRestaurant: Receive pizza
+    Client->PizzaRestaurant: Make payment
+    PizzaRestaurant->PizzaRestaurant: Verify payment
+    PizzaRestaurant->Client: Payment accepted
+
+@end
+```
