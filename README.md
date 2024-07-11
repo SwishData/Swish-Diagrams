@@ -100,7 +100,7 @@ The service provider grants the user access to the protected resource.
 
 ## BPMN Test
 ```mermaid
-@start bpmn
+bpmn
     participant Client
     participant PizzaRestaurant
 
@@ -116,5 +116,4 @@ The service provider grants the user access to the protected resource.
     PizzaRestaurant->PizzaRestaurant: Verify payment
     PizzaRestaurant->Client: Payment accepted
 
-@end
 ```
