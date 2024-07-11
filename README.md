@@ -66,7 +66,7 @@ This diagram represents a typical TCP proxied session where the client communica
 
 ## SAML Authentication
 
-'''mermaid
+```mermaid
 sequenceDiagram
     participant User
     participant IdentityProvider
@@ -83,7 +83,7 @@ sequenceDiagram
     ServiceProvider->>IdentityProvider: Validate SAML assertion
     IdentityProvider->>ServiceProvider: Confirmation
     ServiceProvider->>User: Access to protected resource granted
-'''
+```
 
 In this diagram, the user initiates a request to access a protected resource on the service provider's website.
 The service provider redirects the user to the identity provider's website to initiate the SAML authentication process.
