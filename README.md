@@ -63,3 +63,37 @@ Once the TCP connection is established, the client sends an HTTP request to the 
 Next, the proxy forwards the HTTP request to the origin server, which processes it and generates an HTTP response. The origin server sends the HTTP response back to the proxy. Lastly, the proxy forwards the HTTP response to the client. The client acknowledges the receipt of the response with an ACK packet.
 
 This diagram represents a typical TCP proxied session where the client communicates with a proxy, and the proxy communicates with an origin server, allowing for enhanced security, caching, load balancing, or other reasons to route traffic through a proxy.
+
+## SAML Authentication
+
+'''mermaid
+sequenceDiagram
+    participant User
+    participant IdentityProvider
+    participant ServiceProvider
+
+    User->>ServiceProvider: Request to access protected resource
+    ServiceProvider->>IdentityProvider: Redirect to login page
+    IdentityProvider->>User: Display login page
+    User->>IdentityProvider: Provide credentials
+    IdentityProvider->>IdentityProvider: Verify credentials
+    IdentityProvider->>ServiceProvider: Generate SAML assertion
+    ServiceProvider->>User: Redirect to access protected resource
+    User->>ServiceProvider: Provide SAML assertion
+    ServiceProvider->>IdentityProvider: Validate SAML assertion
+    IdentityProvider->>ServiceProvider: Confirmation
+    ServiceProvider->>User: Access to protected resource granted
+'''
+
+In this diagram, the user initiates a request to access a protected resource on the service provider's website.
+The service provider redirects the user to the identity provider's website to initiate the SAML authentication process.
+The identity provider displays the login page to the user.
+The user provides their login credentials to the identity provider.
+The identity provider verifies the user's credentials.
+The identity provider generates a SAML assertion, which contains information about the user's identity and authentication status.
+The service provider receives the SAML assertion and grants the user access to the protected resource.
+The user is redirected back to the service provider's website.
+The user provides the SAML assertion to the service provider.
+The service provider validates the SAML assertion to make sure it comes from an authentic identity provider.
+The identity provider confirms the user's authentication to the service provider.
+The service provider grants the user access to the protected resource.
