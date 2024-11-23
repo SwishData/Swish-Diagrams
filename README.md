@@ -64,6 +64,36 @@ Next, the proxy forwards the HTTP request to the origin server, which processes 
 
 This diagram represents a typical TCP proxied session where the client communicates with a proxy, and the proxy communicates with an origin server, allowing for enhanced security, caching, load balancing, or other reasons to route traffic through a proxy.
 
+## DNS Resolution
+
+```mermaid
+sequenceDiagram
+    participant User's_Device as User's Device
+    participant DNS_Resolver as DNS Resolver
+    participant Root_Name_Server as Root Name Server
+    participant TLD_Server as Top-Level Domain Server
+    participant Auth_NS as Authoritative Name Server
+    participant Website as Website
+
+    User's_Device ->> DNS_Resolver: Resolving hostname
+    DNS_Resolver ->> Root_Name_Server: Query for root name servers
+    Root_Name_Server -->> DNS_Resolver: List of root name servers
+    DNS_Resolver ->> TLD_Server: Query for top-level domain server
+    TLD_Server -->> DNS_Resolver: IP address of Top-Level Domain Server
+    DNS_Resolver ->> Auth_NS: Query for authoritative name server
+    Auth_NS -->> DNS_Resolver: IP address of Authoritative Name Server
+    DNS_Resolver ->> Auth_NS: Query for website's IP address
+    Auth_NS -->> DNS_Resolver: Website's IP address
+    DNS_Resolver ->> User's_Device: Return IP address
+    User's_Device ->> Website: Request with IP address
+    Website -->> User's_Device: Response
+```
+
+This sequence diagram illustrates the process of DNS resolution of a hostname. The user's device communicates with the DNS resolver to resolve the hostname, and the DNS resolver sends queries to the root name server, top-level domain server, and authoritative name server to ultimately obtain the IP address of the desired website. The IP address is then returned to the user's device, which can use it to access the website.
+
+
+
+
 ## SAML Authentication
 
 ```mermaid
