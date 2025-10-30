@@ -131,7 +131,7 @@ The service provider grants the user access to the protected resource.
 
 
 
-## GenAI Coding Assistanct with AWS Bedrock integration
+## GenAI Coding Assistant with AWS Bedrock integration
 
 ```mermaid
 sequenceDiagram
