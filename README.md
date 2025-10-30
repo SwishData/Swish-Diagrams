@@ -127,3 +127,24 @@ The user provides the SAML assertion to the service provider.
 The service provider validates the SAML assertion to make sure it comes from an authentic identity provider.
 The identity provider confirms the user's authentication to the service provider.
 The service provider grants the user access to the protected resource.
+
+
+
+
+## GenAI Coding Assistanct with AWS Bedrock integration
+
+```mermaid
+sequenceDiagram
+    title LLM API Transaction Flow: Client IDE -> TabbyML -> AWS Bedrock -> Anthropic Opus Model
+
+    participant Client IDE
+    participant TabbyML
+    participant AWS Bedrock
+    participant Anthropic Opus Model
+
+    Client IDE->>TabbyML: Sends coding assistance request (e.g., code completion, debugging)
+    TabbyML->>AWS Bedrock: Forwards request via API integration
+    AWS Bedrock->>Anthropic Opus Model: Processes request using Anthropic Opus model
+    Anthropic Opus Model-->>AWS Bedrock: Returns generated response (e.g., code suggestions)
+    AWS Bedrock-->>TabbyML: Sends processed response back
+    TabbyML-->>Client IDE: Delivers AI coding assistance output
